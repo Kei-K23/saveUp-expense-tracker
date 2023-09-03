@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .navbar {
+        @apply py-4 px-4 bg-purple-400 flex justify-between items-center text-xl font-bold;
+    }
+
+    .btn {
+        @apply flex py-1 px-2 mt-2 border-[0.2rem] border-black transition-colors;
+    }
+
+    .input {
+        @apply w-full text-lg transition-colors;
+    }
+
+    .custom-border {
+        @apply border-[0.2rem] border-black py-2 px-4;
+    }
+}
