@@ -79,7 +79,11 @@ const AddExpenseForm = ({ budgets }) => {
             </select>
           </div>
         ) : (
-          <input type="hidden" name="budgetID" value={budgets.id} />
+          <input
+            type="hidden"
+            name="budgetExpense"
+            value={Array.isArray(budgets) ? budgets[0].id : budgets.id}
+          />
         )}
         <input type="hidden" name="_action" value="addExpense" />
         <Button

@@ -74,6 +74,7 @@ export function deleteItem({ key }) {
 // total spent
 export function calculateTotalSpent(budgetID) {
   const expenses = fetchLocalData("expense") ?? [];
+
   const budgetSpent = expenses.reduce((acc, expense) => {
     if (budgetID == expense.budgetID) {
       return acc + expense.amount;

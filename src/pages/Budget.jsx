@@ -64,7 +64,7 @@ export async function budgetAction({ request }) {
       addExpenseData({
         name: values.expenseName,
         amount: values.expenseAmount,
-        budgetID: values.budgetID,
+        budgetID: values.budgetExpense,
       });
       return toast.success("Add new expense");
     } catch (e) {

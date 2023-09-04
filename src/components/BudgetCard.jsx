@@ -10,7 +10,7 @@ import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/solid";
 const BudgetCard = ({ budget, deleteBudget = false }) => {
   const { id, name, amount, color } = budget;
   const spent = calculateTotalSpent(id);
-  console.log(spent);
+
   return (
     <div
       className={`custom-border border-dashed w-full my-3`}
