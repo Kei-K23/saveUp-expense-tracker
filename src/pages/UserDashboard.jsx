@@ -24,6 +24,7 @@ import { ClipboardDocumentCheckIcon } from "@heroicons/react/24/solid";
 
 const UserDashboard = () => {
   const { userName, budgetData, expensesData } = useLoaderData();
+
   return (
     <>
       {userName ? (
@@ -57,6 +58,7 @@ const UserDashboard = () => {
                         expenses={expensesData
                           .sort((a, b) => b.createdAt - a.createdAt)
                           .slice(0, 7)}
+                        showBudgetLink={true}
                       />
                       <Link to="/expenses">
                         <Button
@@ -138,10 +140,9 @@ export const userDashboardAction = async ({ request }) => {
         amount: values.expenseAmount,
         budgetID: values.budgetExpense,
       });
-      return toast.success("Create new expense");
+      return toast.success("Add new expense");
     } catch (e) {
-      toast.error("Cannot create expense!");
-      throw new Error("Cannot create expense!");
+      throw new Error("Cannot add expense");
     }
   }
   if (_action === "deleteFormData") {
